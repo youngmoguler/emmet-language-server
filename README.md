@@ -20,6 +20,12 @@ The most important thing is that [microsoft/vscode](https://github.com/microsoft
 > **Warning**
 > I've decided to rename the package to `@olrtg/emmet-language-server` for mason/lspconfig integration. Please remove the old `@olrtg/emmet-ls` package and migrate to this new one.
 
+**Using Homebrew:**
+```sh
+ brew tap youngmoguler/emmet-language-server
+ brew install emmet-ls
+```
+
 **Using npm:**
 
 ```sh
