@@ -1,14 +1,17 @@
-class EmmetLs < Formula
-  desc "Emmet language server"
-  homepage "https://github.com/youngmoguler/emmet-language-server"
-  url "https://github.com/youngmoguler/emmet-language-server/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "58a77cf0a7a5459876d797f401a7ffecb35a1fb9aaaa794e09c00d9abf9b7fd9"
+require "language/node"
 
-  depends_on "node" => :build
+class EmmetLs < Formula
+  desc "Emmet Language Server"
+  homepage "https://github.com/youngmoguler/emmet-language-server"
+  url "https://github.com/youngmoguler/emmet-language-server/archive/refs/tags/v2.0.5.tar.gz"
+  sha256 "38ae9c1a0fb5feb53fd6041759d170b4e8ad771f04d938879b1614bec90e7ece"
+  license "MIT"
+
+  depends_on "node"
 
   def install
-    system "npm", "install", "-g", "@olrtg/emmet-language-server"
-    bin.install_symlink "#{HOMEBREW_PREFIX}/bin/emmet-ls" => "emmet-ls"
+    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
