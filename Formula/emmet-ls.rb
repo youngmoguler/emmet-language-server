@@ -7,15 +7,11 @@ class EmmetLs < Formula
   depends_on "node" => :build
 
   def install
-    ENV.prepend_path "PATH", "#{Formula["node"].opt_bin}"
-
-    # Install the node modules to libexec
-    system "npm", "install", "--prefix", libexec
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    system "npm", "install", "-g", "@olrtg/emmet-language-server"
+    bin.install_symlink "#{HOMEBREW_PREFIX}/bin/emmet-ls" => "emmet-ls"
   end
 
   test do
-    system "false"
+    system "#{bin}/emmet-ls", "--version"
   end
 end
-
