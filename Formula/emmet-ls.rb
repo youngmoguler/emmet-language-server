@@ -4,7 +4,7 @@ class EmmetLs < Formula
   desc "Emmet Language Server"
   homepage "https://github.com/youngmoguler/emmet-language-server"
   url "https://github.com/youngmoguler/emmet-language-server/archive/refs/tags/v2.0.5.tar.gz"
-  sha256 "38ae9c1a0fb5feb53fd6041759d170b4e8ad771f04d938879b1614bec90e7ece"
+  sha256 "73410a87122cd72ddc374295097b94becf6211201fdf135af1dd257afe64966f"
   license "MIT"
 
   depends_on "node"
